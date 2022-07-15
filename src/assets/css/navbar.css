@@ -1,7 +1,19 @@
 .navbar {
-    min-height: 95px;
-    display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    margin: auto;
+    width: 95vw;
+    min-height: 95px;
+}
+
+.nav-link>ul {
+    text-align: left;
+}
+
+.nav-link>ul>li {
+    padding: 0 15px;
+}
+
+.nav-menu>div {
+    padding: 0 5px;
 }

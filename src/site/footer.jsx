@@ -4,8 +4,8 @@ import '../assets/css/footer.css'
 const Footer = () => {
   return (
     <>
-      <div className="footer">
-        <div className="footer-container">
+      <div className="col footer">
+        <div className="row footer-container">
           <div>
             <ul>
               <li>Audio and Subtitles</li>
