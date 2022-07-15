@@ -1,0 +1,39 @@
+.footer {
+    width: 80vw;
+    margin: auto;
+    color: grey;
+    text-align: left;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-container>div>ul {
+    line-height: 2;
+    list-style: none;
+    padding: 0;
+}
+
+.footer-button {
+    background-color: transparent;
+    border: solid 1px grey;
+    color: grey;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 500ms;
+}
+
+.footer-button:hover {
+    background-color: grey;
+    border: solid 1px darkgrey;
+    color: black;
+    transition: all 500ms;
+}
+
+.copyright {
+    text-align: left;
+    padding: 20px 0;
+}
