@@ -2,15 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../assets/css/whos.css'
 import { Avatar, Image } from '../assets/img/img'
+
 const Whos = () => {
   return (
     <>
       <div className="whos-logo">
         <Link to="/">
-          <i
-            className="ic-chevron-left"
-            style={{ textShadow: '2px 2px 2px #000000' }}
-          ></i>
+          <img src={Image.logo} alt="logo" width="50" />
         </Link>
       </div>
       <div className="col center whos-page">

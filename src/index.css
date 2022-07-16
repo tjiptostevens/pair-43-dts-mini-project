@@ -27,6 +27,12 @@ body {
 
 a {
     text-decoration: none;
+    transition: all 500ms;
+}
+
+a:active {
+    font-weight: 700;
+    transition: all 500ms;
 }
 
 code {
