@@ -26,13 +26,21 @@ const Navbar = () => {
           </div>
         </div>
         <div className="row nav-menu">
-          <div>S</div>
+          <div>
+            <i className="ic ic-spectacles"></i>
+          </div>
           <div>Tjipto</div>
-          <div>G</div>
-          <div>N</div>
+          <div>
+            <i className="ic ic-gift"></i>
+          </div>
+          <div>
+            <i className="ic ic-bell"></i>
+          </div>
           <div className="row">
             <div>Foto</div>
-            <div>A</div>
+            <div>
+              <i className="ic ic-caret-down"></i>
+            </div>
           </div>
         </div>
       </div>

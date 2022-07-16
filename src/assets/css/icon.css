@@ -1,0 +1,31 @@
+.ic::before {
+    fill: currentColor;
+}
+
+.ic-spectacles {
+    content: url("../img/icon/spectacles.svg");
+}
+
+.ic-gift {
+    content: url("../img/icon/gift.svg");
+}
+
+.ic-bell {
+    content: url("../img/icon/bell.svg");
+}
+
+.ic-caret-down {
+    content: url("../img/icon/caret-down.svg");
+}
+
+.ic-chevron-left {
+    content: url("../img/icon/chevron-left.svg");
+}
+
+.ic-chevron-right {
+    content: url("../img/icon/chevron-right.svg");
+}
+
+.ic-important {
+    content: url("../img/icon/important.svg");
+}
