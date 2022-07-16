@@ -6,12 +6,13 @@
     min-height: 95px;
 }
 
-.nav-link>ul {
+.nav-link {
     text-align: left;
 }
 
-.nav-link>ul>li {
-    padding: 0 15px;
+.nav-link>a {
+    padding: 15px;
+    color: white;
 }
 
 .nav-menu>div {

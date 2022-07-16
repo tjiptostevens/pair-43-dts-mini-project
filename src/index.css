@@ -1,6 +1,23 @@
+@font-face {
+    font-family: gotham;
+    src: url(./assets/font/GothamLight.ttf);
+}
+
+@font-face {
+    font-family: gotham;
+    src: url(./assets/font/GothamMedium.ttf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: gotham;
+    src: url(./assets/font/GothamBold.ttf);
+    font-weight: 700;
+}
+
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: gotham;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: black;
@@ -8,8 +25,8 @@ body {
     font-size: 1em;
 }
 
-ul {
-    list-style: none;
+a {
+    text-decoration: none;
 }
 
 code {
