@@ -11,7 +11,7 @@ const Navbar = () => {
           <div
             className="logo"
             style={{
-              background: `url(${logo}) center center / cover`,
+              background: `url(.${logo}) center center / cover`,
               width: '50px',
             }}
           ></div>

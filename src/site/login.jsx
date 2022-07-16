@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../assets/css/login.css'
-import { Avatar } from '../assets/img/avatar'
+import { Avatar } from '../assets/img/img'
 
 const Login = () => {
   return (
@@ -30,7 +30,7 @@ const Login = () => {
               type="password"
               placeholder="PASSWORD"
             />
-            <button className="btn">L O G I N</button>
+            <button className="btn btn-login">LOGIN</button>
           </form>
         </div>
       </div>

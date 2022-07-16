@@ -1,3 +1,5 @@
+import logo from './logo.svg'
+import murat from './murat.svg'
 export const Avatar = [
   'https://mir-s3-cdn-cf.behance.net/project_modules/disp/84c20033850498.56ba69ac290ea.png',
   'https://mir-s3-cdn-cf.behance.net/project_modules/disp/64623a33850498.56ba69ac2a6f7.png',
@@ -12,3 +14,8 @@ export const Avatar = [
   'https://mir-s3-cdn-cf.behance.net/project_modules/disp/fd69a733850498.56ba69ac2f221.png',
   'https://mir-s3-cdn-cf.behance.net/project_modules/disp/366be133850498.56ba69ac36858.png',
 ]
+
+export const Image = {
+  logo: logo,
+  murat: murat,
+}
