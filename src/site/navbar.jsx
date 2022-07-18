@@ -63,7 +63,7 @@ const Navbar = () => {
             <div>
               <i className="ic ic-spectacles"></i>
             </div>
-            <div>Tjipto</div>
+            <div>[USER ID]</div>
             <div>
               <i className="ic ic-gift"></i>
             </div>

@@ -44,50 +44,70 @@ const Home = () => {
   const popular = [
     {
       title: '',
-      image: 'https://picsum.photos/201/301',
+      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
+        Math.floor(Math.random() * 100) + 300
+      }`,
     },
     {
       title: '',
-      image: 'https://picsum.photos/202/302',
+      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
+        Math.floor(Math.random() * 100) + 300
+      }`,
     },
     {
       title: '',
-      image: 'https://picsum.photos/203/303',
+      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
+        Math.floor(Math.random() * 100) + 300
+      }`,
     },
     {
       title: '',
-      image: 'https://picsum.photos/204/304',
+      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
+        Math.floor(Math.random() * 100) + 300
+      }`,
     },
     {
       title: '',
-      image: 'https://picsum.photos/205/305',
+      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
+        Math.floor(Math.random() * 100) + 300
+      }`,
     },
     {
       title: '',
-      image: 'https://picsum.photos/201/301',
+      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
+        Math.floor(Math.random() * 100) + 300
+      }`,
     },
     {
       title: '',
-      image: 'https://picsum.photos/202/302',
+      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
+        Math.floor(Math.random() * 100) + 300
+      }`,
     },
     {
       title: '',
-      image: 'https://picsum.photos/203/303',
+      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
+        Math.floor(Math.random() * 100) + 300
+      }`,
     },
     {
       title: '',
-      image: 'https://picsum.photos/204/304',
+      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
+        Math.floor(Math.random() * 100) + 300
+      }`,
     },
     {
       title: '',
-      image: 'https://picsum.photos/205/305',
+      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
+        Math.floor(Math.random() * 100) + 300
+      }`,
     },
   ]
   return (
     <>
       <Carousel data={data} />
       <MiniSlider title={'Popular'} data={popular} />
-      <MiniSlider title={`ID, Continue Watching`} data={popular} />
+      <MiniSlider title={`[USER ID], Continue Watching`} data={popular} />
       <MiniSlider title={'On The Agenda'} data={popular} />
       <MiniSlider title={'Original'} height={'400px'} data={popular} />
       <MiniSlider title={'Top 10 Indonesian Movies'} data={popular} />

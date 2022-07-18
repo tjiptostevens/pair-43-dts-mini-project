@@ -55,7 +55,11 @@ const MiniSlider = (props) => {
           data={props.data}
           height={props.height}
         />
-        <Arrow direction="left" handleClick={prevSlide} />
+        {state.activeIndex === 0 ? (
+          ''
+        ) : (
+          <Arrow direction="left" handleClick={prevSlide} />
+        )}
         <Arrow direction="right" handleClick={nextSlide} />
       </div>
     </>

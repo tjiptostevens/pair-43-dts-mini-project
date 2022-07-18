@@ -4,8 +4,8 @@ import Strip from './strip'
 const StripContent = (props) => {
   return (
     <>
-      {console.log(props)}
       <div
+        className="transition"
         style={{
           transform: `translateX(-${props.translate}px)`,
           transition: `tranform ease-out ${props.transition}s`,

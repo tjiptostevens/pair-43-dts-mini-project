@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Arrow from './arrow'
 import SliderContent from './sliderContent'
 
@@ -39,24 +39,41 @@ const Slider = (props) => {
           : (state.activeIndex - 1) * getWidth(),
     })
   }
-  const autoPlay = () => {}
+
+  const autoPlay = () => {
+    setInterval(() => {
+      nextSlide()
+    }, props.autoPlay[1] * 1000)
+  }
+
   return (
     <>
-      <div className="slider">
+      <div
+        className="slider"
+        onMouseEnter={() => {
+          setState({ ...state, autoPlay: false })
+        }}
+        onMouseLeave={() => {
+          setState({ ...state, autoPlay: true })
+        }}
+      >
         <SliderContent
           translate={state.translate}
           transition={state.transition}
           width={getWidth() * props.data.length}
           data={props.data}
         />
-        <Arrow direction="left" handleClick={prevSlide} />
+        {state.activeIndex === 0 ? (
+          ''
+        ) : (
+          <Arrow direction="left" handleClick={prevSlide} />
+        )}
         <Arrow direction="right" handleClick={nextSlide} />
       </div>
     </>
   )
 }
 Slider.defaultProps = {
-  slides: [],
   autoPlay: null,
 }
 export default Slider
