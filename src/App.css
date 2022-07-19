@@ -35,3 +35,7 @@
     border-radius: 0.2rem;
     transition: all 500ms;
 }
+
+.transition {
+    transition: all 500ms;
+}
