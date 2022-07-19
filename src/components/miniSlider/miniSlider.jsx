@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import Arrow from '../slider/arrow'
 import StripContent from './stripContent'
 
+const getWidth = () => window.innerWidth
+
 const MiniSlider = (props) => {
   const [state, setState] = useState({
     activeIndex: 0,
     translate: 0,
     transition: 0.5,
-    width: 300,
+    width: 150,
   })
   // Arrow Button
   const nextSlide = () => {
@@ -17,7 +19,7 @@ const MiniSlider = (props) => {
     setState({
       ...state,
       activeIndex: state.activeIndex + 1,
-      translate: ((state.activeIndex + 1) * state.width) / 2,
+      translate: (state.activeIndex * state.width) / 2,
     })
   }
   const prevSlide = () => {
@@ -60,7 +62,15 @@ const MiniSlider = (props) => {
         ) : (
           <Arrow direction="left" handleClick={prevSlide} />
         )}
-        <Arrow direction="right" handleClick={nextSlide} />
+        {Math.abs(state.translate) === 0 ||
+        state.width * props.data.length -
+          window.innerWidth -
+          Math.abs(state.translate) >=
+          0 ? (
+          <Arrow direction="right" handleClick={nextSlide} />
+        ) : (
+          ''
+        )}
       </div>
     </>
   )

@@ -107,12 +107,12 @@ const Home = () => {
     <>
       <Carousel data={data} />
       <MiniSlider title={'Popular'} data={popular} />
-      <MiniSlider title={`[USER ID], Continue Watching`} data={popular} />
+      {/* <MiniSlider title={`[USER ID], Continue Watching`} data={popular} />
       <MiniSlider title={'On The Agenda'} data={popular} />
       <MiniSlider title={'Original'} height={'400px'} data={popular} />
       <MiniSlider title={'Top 10 Indonesian Movies'} data={popular} />
       <MiniSlider title={'Watch Again'} data={popular} />
-      <MiniSlider title={'My List'} data={popular} />
+      <MiniSlider title={'My List'} data={popular} /> */}
     </>
   )
 }

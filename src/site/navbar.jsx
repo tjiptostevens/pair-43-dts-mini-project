@@ -10,10 +10,9 @@ const Navbar = () => {
       <div className="row navbar">
         <div className="row">
           <div
-            className="logo"
+            className="nav-logo"
             style={{
               background: `url(.${logo}) center center / cover`,
-              width: '50px',
             }}
           ></div>
           {/* Jika sudah login true */}

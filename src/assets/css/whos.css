@@ -1,24 +1,23 @@
-.whos-page {
-    width: 100%;
-    height: 100vh;
-}
-
-.profile {
-    width: 150px;
-    height: 150px;
-    margin: 15px;
-}
-
-.btn-profile {
-    background-color: black;
-    color: grey;
-    border: 1px solid grey;
-    min-width: 200px;
-    margin: 25px 0;
-}
-
-.whos-logo {
-    position: absolute;
-    top: 50px;
-    left: 50px;
+@media only screen and (max-width: 1920px) {
+    .whos-page {
+        width: 100%;
+        height: 100vh;
+    }
+    .profile {
+        width: 150px;
+        height: 150px;
+        margin: 15px;
+    }
+    .btn-profile {
+        background-color: black;
+        color: grey;
+        border: 1px solid grey;
+        min-width: 200px;
+        margin: 25px 0;
+    }
+    .whos-logo {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+    }
 }

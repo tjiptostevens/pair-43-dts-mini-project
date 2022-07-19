@@ -7,8 +7,9 @@ const Strip = (props) => {
         <div
           key={i}
           style={{
-            minHeight: props.height === undefined ? '150px' : props.height,
-            width: '225px',
+            minHeight: props.height === undefined ? '200px' : props.height,
+            width: '150px',
+            borderRadius: '5px',
             marginRight: '15px',
             background: `url(${d.image}) no-repeat center center / cover`,
           }}
