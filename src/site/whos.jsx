@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../assets/css/whos.css'
-import { Avatar, Image } from '../assets/img/img'
 import WhosProfile from './whosProfile'
 
 let profiles = [

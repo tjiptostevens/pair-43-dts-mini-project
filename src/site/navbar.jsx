@@ -95,7 +95,7 @@ const Navbar = () => {
             </div>
           </>
         ) : (
-          <div className="row nav-link">
+          <div className="row nav-link" onClick={() => setLogin(!login)}>
             <NavLink to="/login">Login</NavLink>
           </div>
         )}

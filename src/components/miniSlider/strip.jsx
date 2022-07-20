@@ -8,6 +8,7 @@ const Strip = (props) => {
         <>
           {props.top10 ? (
             <div
+              key={'icon' + i}
               style={{
                 display: 'flex',
                 justifyContent: 'flex-end',
@@ -26,7 +27,7 @@ const Strip = (props) => {
             ''
           )}
           <div
-            key={i}
+            key={d.image + i}
             style={{
               minHeight:
                 props.height === undefined

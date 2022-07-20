@@ -19,8 +19,8 @@ const Slide = (props) => {
         {video ? (
           <iframe
             style={{ width: '100%', height: 'inherit' }}
-            src={props.data.video}
-            title="YouTube video player"
+            src={`https://www.youtube.com/embed/${props.data.video}`}
+            title={props.data.title}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

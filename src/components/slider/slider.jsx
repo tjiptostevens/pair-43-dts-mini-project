@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Arrow from './arrow'
 import SliderContent from './sliderContent'
 import useWindow from '../../custom/useWindow'
@@ -40,22 +40,21 @@ const Slider = (props) => {
     })
   }
 
-  const autoPlay = () => {
-    setInterval(() => {
-      nextSlide()
-    }, props.autoPlay[1] * 1000)
-  }
+  // const autoPlay = (e) => {
+  //   let x = setInterval(nextSlide(), props.autoPlay[1] * 1000)
+  //   if (e) {
+  //     console.log(x)
+  //   } else {
+  //     clearInterval(x)
+  //   }
+  // }
 
   return (
     <>
       <div
         className="slider"
-        onMouseEnter={() => {
-          setState({ ...state, autoPlay: false })
-        }}
-        onMouseLeave={() => {
-          setState({ ...state, autoPlay: true })
-        }}
+        // onMouseEnter={() => autoPlay(false)}
+        // onMouseLeave={() => autoPlay(true)}
       >
         <SliderContent
           translate={state.translate}
