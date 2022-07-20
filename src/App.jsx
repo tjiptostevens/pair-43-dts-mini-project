@@ -8,7 +8,7 @@ import Login from './site/login'
 
 function App() {
   // cek apakah sudah login ?
-  if (true) {
+  if (false) {
     return <Login />
   }
   return (

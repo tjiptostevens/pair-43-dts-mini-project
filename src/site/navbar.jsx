@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import '../assets/css/navbar.css'
 import { NavLink } from 'react-router-dom'
-import logo from '../assets/img/logo.svg'
-import { Avatar } from '../assets/img/img'
+import { Avatar, Image } from '../assets/img/img'
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false)
@@ -14,7 +13,7 @@ const Navbar = () => {
           <div
             className="nav-logo"
             style={{
-              background: `url(.${logo}) center center / cover`,
+              background: `url(${Image.logo}) center center / cover`,
             }}
           ></div>
           {/* Jika sudah login true */}
