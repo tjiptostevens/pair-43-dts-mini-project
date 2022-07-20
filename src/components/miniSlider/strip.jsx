@@ -28,6 +28,7 @@ const Strip = (props) => {
           )}
           <div
             key={d.image + i}
+            className="strip"
             style={{
               minHeight:
                 props.height === undefined

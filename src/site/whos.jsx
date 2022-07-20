@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../assets/css/whos.css'
 import WhosProfile from './whosProfile'
+import { Image } from '../assets/img/img'
 
 let profiles = [
   { icon: '0', name: 'ALDI' },
@@ -20,9 +21,29 @@ const Whos = () => {
   }
   const handleAdd = (e) => {
     let x = prompt('Input user name here.')
-    let y = prompt('Pilih avatar ketik angka 0 - 11')
-    let z = [...profile, { icon: y, name: x }]
-    setProfile(z)
+    let y = parseFloat(prompt('Pilih avatar ketik angka 0 - 11'))
+    if (x === '' || x === null) {
+      x = 'USER'
+      console.log(x, y)
+      if (isNaN(y)) {
+        y = `${Math.floor(Math.random() * 11)}`
+        console.log(x, y)
+        let z = [...profile, { icon: y, name: x }]
+        setProfile(z)
+      } else {
+        let z = [...profile, { icon: y, name: x }]
+        setProfile(z)
+      }
+    } else if (isNaN(y)) {
+      y = `${Math.floor(Math.random() * 11)}`
+      console.log(x, y)
+      let z = [...profile, { icon: y, name: x }]
+      setProfile(z)
+    } else {
+      console.log(x, y)
+      let z = [...profile, { icon: y, name: x }]
+      setProfile(z)
+    }
   }
   return (
     <>

@@ -31,6 +31,7 @@ const Slide = (props) => {
             <p style={{ margin: '0 0 25px 0' }}>
               <small>{props.data.tag}</small>
             </p>
+            {video ? <button>PLAY VIDEO</button> : ''}
             <p style={{ textAlign: 'justify' }}>{props.data.description}</p>
           </div>
         )}

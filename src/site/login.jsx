@@ -9,14 +9,14 @@ const Login = () => {
   return (
     <>
       <div
-        className="row center login-page"
+        className="login-page row center"
         style={{
           background: `linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%), url(${
             Avatar[Math.floor(Math.random() * Avatar.length)]
           }) no-repeat 0% 0% / contain`,
         }}
       >
-        <div className="row center login-left ">
+        <div className="login-left row center">
           <Link to="/">
             <i
               className="ic-chevron-left"
@@ -24,7 +24,7 @@ const Login = () => {
             ></i>
           </Link>
         </div>
-        <div className="col center login-right ">
+        <div className="login-right col center">
           <form className="col">
             <input className="form-input" type="email" placeholder="EMAIL" />
             <input

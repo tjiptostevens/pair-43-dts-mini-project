@@ -1,6 +1,7 @@
 import React from 'react'
 import MiniSlider from '../components/miniSlider/miniSlider'
 import Carousel from './carousel'
+import testImage from '../assets/img/test.jpg'
 
 const Home = () => {
   const data = [
@@ -44,63 +45,43 @@ const Home = () => {
   const popular = [
     {
       title: '',
-      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
-        Math.floor(Math.random() * 100) + 300
-      }`,
+      image: testImage,
     },
     {
       title: '',
-      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
-        Math.floor(Math.random() * 100) + 300
-      }`,
+      image: testImage,
     },
     {
       title: '',
-      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
-        Math.floor(Math.random() * 100) + 300
-      }`,
+      image: testImage,
     },
     {
       title: '',
-      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
-        Math.floor(Math.random() * 100) + 300
-      }`,
+      image: testImage,
     },
     {
       title: '',
-      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
-        Math.floor(Math.random() * 100) + 300
-      }`,
+      image: testImage,
     },
     {
       title: '',
-      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
-        Math.floor(Math.random() * 100) + 300
-      }`,
+      image: testImage,
     },
     {
       title: '',
-      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
-        Math.floor(Math.random() * 100) + 300
-      }`,
+      image: testImage,
     },
     {
       title: '',
-      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
-        Math.floor(Math.random() * 100) + 300
-      }`,
+      image: testImage,
     },
     {
       title: '',
-      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
-        Math.floor(Math.random() * 100) + 300
-      }`,
+      image: testImage,
     },
     {
       title: '',
-      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
-        Math.floor(Math.random() * 100) + 300
-      }`,
+      image: testImage,
     },
   ]
 
