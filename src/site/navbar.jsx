@@ -58,38 +58,41 @@ const Navbar = () => {
           )}
         </div>
         {true ? (
-          <div className="row center nav-menu">
-            <div>
-              <i className="ic ic-spectacles"></i>
-            </div>
-            <div>[USER ID]</div>
-            <div>
-              <i className="ic ic-gift"></i>
-            </div>
-            <div>
-              <i className="ic ic-bell"></i>
-            </div>
-
-            <div className="row center">
-              <div
-                className="nav-profile"
-                style={{
-                  background: `url(${
-                    Avatar[Math.floor(Math.random() * Avatar.length)]
-                  }) no-repeat center center / cover`,
-                }}
-              ></div>
+          <>
+            <div className="row center nav-menu">
               <div>
-                <i className="ic ic-caret-down"></i>
+                <i className="ic ic-spectacles"></i>
+              </div>
+              <div>[USER ID]</div>
+              <div>
+                <i className="ic ic-gift"></i>
+              </div>
+              <div>
+                <i className="ic ic-bell"></i>
+              </div>
+
+              <div className="row center">
+                <div
+                  className="nav-profile"
+                  style={{
+                    background: `url(${
+                      Avatar[Math.floor(Math.random() * Avatar.length)]
+                    }) no-repeat center center / cover`,
+                  }}
+                ></div>
+                <div>
+                  <i className="ic ic-caret-down"></i>
+                </div>
               </div>
             </div>
-          </div>
+          </>
         ) : (
           <div className="row nav-link">
             <NavLink to="/login">Login</NavLink>
           </div>
         )}
       </div>
+      <div style={{ position: 'relative', bottom: '30px' }}>LOGOUT</div>
     </>
   )
 }

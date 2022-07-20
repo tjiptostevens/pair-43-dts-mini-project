@@ -3,29 +3,50 @@
 }
 
 .ic-spectacles {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
     content: url("../img/icon/spectacles.svg");
 }
 
 .ic-gift {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
     content: url("../img/icon/gift.svg");
 }
 
 .ic-bell {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
     content: url("../img/icon/bell.svg");
 }
 
 .ic-caret-down {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
     content: url("../img/icon/caret-down.svg");
 }
 
 .ic-chevron-left {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
     content: url("../img/icon/chevron-left.svg");
 }
 
 .ic-chevron-right {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
     content: url("../img/icon/chevron-right.svg");
 }
 
 .ic-important {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
     content: url("../img/icon/important.svg");
 }

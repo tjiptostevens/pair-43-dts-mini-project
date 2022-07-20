@@ -9,6 +9,8 @@
         width: 100%;
         margin: 0 auto;
         overflow: hidden;
+        scroll-snap-type: x proximity;
+        scroll-behavior: smooth;
     }
     .slide {
         width: 100%;

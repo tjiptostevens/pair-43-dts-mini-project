@@ -109,9 +109,13 @@ const Home = () => {
       <MiniSlider title={'Popular'} data={popular} />
       {/* <MiniSlider title={`[USER ID], Continue Watching`} data={popular} />
       <MiniSlider title={'On The Agenda'} data={popular} />
-      <MiniSlider title={'Original'} height={'400px'} data={popular} />
-      <MiniSlider title={'Top 10 Indonesian Movies'} data={popular} />
-      <MiniSlider title={'Watch Again'} data={popular} />
+      <MiniSlider title={'Original'} height={400} data={popular} /> */}
+      <MiniSlider
+        title={'Top 10 Indonesian Movies'}
+        data={popular}
+        top10={true}
+      />
+      {/* <MiniSlider title={'Watch Again'} data={popular} />
       <MiniSlider title={'My List'} data={popular} /> */}
     </>
   )

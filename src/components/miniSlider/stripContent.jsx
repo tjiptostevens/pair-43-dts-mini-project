@@ -13,7 +13,12 @@ const StripContent = (props) => {
           display: 'flex',
         }}
       >
-        <Strip data={props.data} height={props.height} />
+        <Strip
+          data={props.data}
+          height={props.height}
+          slide={props.slide}
+          top10={props.top10}
+        />
       </div>
     </>
   )
