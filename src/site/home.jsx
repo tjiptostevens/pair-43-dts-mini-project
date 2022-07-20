@@ -103,6 +103,7 @@ const Home = () => {
       }`,
     },
   ]
+
   return (
     <>
       <Carousel data={data} />

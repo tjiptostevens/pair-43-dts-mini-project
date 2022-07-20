@@ -4,8 +4,13 @@ import './App.css'
 import Navbar from './site/navbar'
 import Footer from './site/footer'
 import Home from './site/home'
+import Login from './site/login'
 
 function App() {
+  // cek apakah sudah login ?
+  if (true) {
+    return <Login />
+  }
   return (
     <div className="App">
       <Navbar />

@@ -24,4 +24,14 @@
         margin: 25px 0;
         font-weight: 700;
     }
+    .btn-signup {
+        padding: 7px 25px;
+        margin: 7px;
+        cursor: pointer;
+        transition: all 500ms;
+    }
+    .btn-signup:hover {
+        border: 1px solid grey;
+        transition: all 500ms;
+    }
 }

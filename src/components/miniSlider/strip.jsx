@@ -14,11 +14,13 @@ const Strip = (props) => {
                 alignItems: 'flex-end',
                 minWidth: `${props.slide.height / 2}px`,
                 textAlign: 'right',
-                // height: `${props.slide.height}px`,
-                // background: `url(${iconNumber[i]}) no-repeat center center / cover`,
               }}
             >
-              <img src={iconNumber[i]} height={`${props.slide.width}px`} />
+              <img
+                src={iconNumber[i]}
+                height={`${props.slide.width}px`}
+                alt={i}
+              />
             </div>
           ) : (
             ''

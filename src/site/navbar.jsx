@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../assets/css/navbar.css'
 import { NavLink } from 'react-router-dom'
 import logo from '../assets/img/logo.svg'
 import { Avatar } from '../assets/img/img'
 
 const Navbar = () => {
+  const [dropdown, setDropdown] = useState(false)
+  const [login, setLogin] = useState(false)
   return (
     <>
       <div className="row navbar">
@@ -16,7 +18,7 @@ const Navbar = () => {
             }}
           ></div>
           {/* Jika sudah login true */}
-          {true ? (
+          {login ? (
             <div className="row nav-link">
               <NavLink
                 className={({ isActive }) => (isActive ? 'a-active' : '')}
@@ -57,7 +59,7 @@ const Navbar = () => {
             ''
           )}
         </div>
-        {true ? (
+        {login ? (
           <>
             <div className="row center nav-menu">
               <div>
@@ -71,7 +73,13 @@ const Navbar = () => {
                 <i className="ic ic-bell"></i>
               </div>
 
-              <div className="row center">
+              <div
+                className="row center"
+                style={{ cursor: 'pointer' }}
+                onClick={() => {
+                  setDropdown(!dropdown)
+                }}
+              >
                 <div
                   className="nav-profile"
                   style={{
@@ -92,7 +100,13 @@ const Navbar = () => {
           </div>
         )}
       </div>
-      <div style={{ position: 'relative', bottom: '30px' }}>LOGOUT</div>
+      <div
+        id="nav-dropdown"
+        className="nav-dropdown"
+        style={{ opacity: dropdown ? '1' : '0' }}
+      >
+        LOGOUT
+      </div>
     </>
   )
 }

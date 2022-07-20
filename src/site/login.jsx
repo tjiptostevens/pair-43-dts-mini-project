@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import '../assets/css/login.css'
 import { Avatar } from '../assets/img/img'
 
 const Login = () => {
+  let navigate = useNavigate()
   const [toggle, setToggle] = useState(true)
   return (
     <>
@@ -31,16 +32,19 @@ const Login = () => {
               type="password"
               placeholder="PASSWORD"
             />
-            <button className="btn btn-login">
+            <button
+              className="btn btn-login"
+              onClick={(e) => {
+                e.preventDefault()
+                navigate('/whos')
+              }}
+            >
               {toggle ? 'LOGIN' : 'SIGN UP'}
             </button>
             <div className="col center" style={{ fontSize: '12px' }}>
               {toggle ? "Don't " : 'Already '}have an Account
-              <div
-                style={{ cursor: 'pointer' }}
-                onClick={() => setToggle(!toggle)}
-              >
-                <p>{toggle ? 'SIGN UP' : 'LOGIN'}</p>
+              <div className="btn-signup" onClick={() => setToggle(!toggle)}>
+                {toggle ? 'SIGN UP' : 'LOGIN'}
               </div>
             </div>
           </form>

@@ -1,9 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../assets/css/whos.css'
 import { Avatar, Image } from '../assets/img/img'
+import WhosProfile from './whosProfile'
+
+let profiles = [
+  { icon: '0', name: 'ALDI' },
+  { icon: '1', name: 'Steven' },
+  { icon: '2', name: 'Freddy' },
+  { icon: '3', name: 'Angel' },
+]
 
 const Whos = () => {
+  const [profile, setProfile] = useState(profiles)
+  const [toggle, setToggle] = useState(false)
+  const handleDelete = (e) => {
+    let x = [...profile]
+    x.splice(e, 1)
+    setProfile([...x])
+  }
+  const handleAdd = (e) => {
+    let x = prompt('Input user name here.')
+    let y = prompt('Pilih avatar ketik angka 0 - 11')
+    let z = [...profile, { icon: y, name: x }]
+    setProfile(z)
+  }
   return (
     <>
       <div className="whos-logo">
@@ -13,63 +34,31 @@ const Whos = () => {
       </div>
       <div className="col center whos-page">
         <h1>Who's watching?</h1>
-        <div className="row center">
-          <div className="col center">
-            <div
-              className="profile"
-              style={{
-                background: `url(${
-                  Avatar[Math.floor(Math.random() * Avatar.length)]
-                }) no-repeat center center / cover`,
-              }}
-            ></div>
-            <p>U-ONE</p>
-          </div>
-          <div className="col center">
-            <div
-              className="profile"
-              style={{
-                background: `url(${
-                  Avatar[Math.floor(Math.random() * Avatar.length)]
-                }) no-repeat center center / cover`,
-              }}
-            ></div>
-            <p>U-TWO</p>
-          </div>
-          <div className="col center">
-            <div
-              className="profile"
-              style={{
-                background: `url(${
-                  Avatar[Math.floor(Math.random() * Avatar.length)]
-                }) no-repeat center center / cover`,
-              }}
-            ></div>
-            <p>U-THREE</p>
-          </div>
-          <div className="col center">
-            <div
-              className="profile"
-              style={{
-                background: `url(${
-                  Avatar[Math.floor(Math.random() * Avatar.length)]
-                }) no-repeat center center / cover`,
-              }}
-            ></div>
-            <p>U-FOUR</p>
-          </div>
-          <div className="col center">
-            <div
-              className="profile"
-              style={{
-                background: `url(${Image.murat}) no-repeat center center`,
-              }}
-            ></div>
-            <p>OTHER</p>
-          </div>
+        <div className="row center" style={{ flexWrap: 'wrap' }}>
+          <WhosProfile
+            data={profile}
+            handleDelete={handleDelete}
+            toggle={toggle}
+          />
+          {toggle ? (
+            <div className="col center profile-container" onClick={handleAdd}>
+              <div
+                className="profile"
+                style={{
+                  background: `url(${Image.murat}) no-repeat center center`,
+                }}
+              ></div>
+              <p>ADD</p>
+            </div>
+          ) : (
+            ''
+          )}
         </div>
-        <button className="btn btn-profile">MANAGE PROFILE</button>
+        <button className="btn btn-profile" onClick={() => setToggle(!toggle)}>
+          {toggle ? 'FINISH' : 'MANAGE PROFILE'}
+        </button>
       </div>
+      <div></div>
     </>
   )
 }
