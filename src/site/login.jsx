@@ -59,7 +59,7 @@ const Login = ({ loginOrRegister }) => {
     if (error) {
       console.log(error)
     }
-  }, [isLoading, user, navigate])
+  }, [isLoading, user, navigate, error])
   return (
     <>
       <div
