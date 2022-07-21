@@ -9,7 +9,7 @@ const MiniSlider = (props) => {
     activeIndex: 0,
     translate: 0,
     transition: 0.5,
-    slide: { width: 150, height: 200 },
+    slide: { width: props.height ? (props.height / 4) * 3 : 150, height: 200 },
   })
   // Arrow Button
   const nextSlide = () => {
@@ -51,6 +51,7 @@ const MiniSlider = (props) => {
       >
         <h3>{props.title}</h3>
         <StripContent
+          title={props.title}
           translate={state.translate}
           transition={state.transition}
           width={

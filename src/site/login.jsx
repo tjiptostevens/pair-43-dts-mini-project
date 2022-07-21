@@ -26,11 +26,17 @@ const Login = () => {
         </div>
         <div className="login-right col center">
           <form className="col">
-            <input className="form-input" type="email" placeholder="EMAIL" />
+            <input
+              className="form-input"
+              type="email"
+              placeholder="EMAIL"
+              style={{ color: 'grey' }}
+            />
             <input
               className="form-input"
               type="password"
               placeholder="PASSWORD"
+              style={{ color: 'grey' }}
             />
             <button
               className="btn btn-login"

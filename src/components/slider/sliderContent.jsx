@@ -1,6 +1,9 @@
 import React from 'react'
 import Slide from './slide'
+
+import useFetch from '../../custom/useFetch'
 const SliderContent = (props) => {
+  const { data: genre } = useFetch('genre/movie/list')
   return (
     <>
       <div
@@ -13,7 +16,11 @@ const SliderContent = (props) => {
         }}
       >
         {props.data.map((d, i) => (
-          <Slide key={d.title + i} data={d} />
+          <Slide
+            key={'slide' + d.id + d.title}
+            data={d}
+            genre={genre && genre.genres}
+          />
         ))}
       </div>
     </>
