@@ -1,7 +1,6 @@
 import React from 'react'
 import MiniSlider from '../components/miniSlider/miniSlider'
 import Carousel from './carousel'
-import testImage from '../assets/img/test.jpg'
 import useFetch from '../custom/useFetch'
 
 const Home = () => {

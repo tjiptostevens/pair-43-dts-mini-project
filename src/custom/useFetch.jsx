@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { API_URL, API_KEY_MOVIE } from '../config/config'
+import { API_URL } from '../config/config'
 
 const useFetch = (url) => {
   const [data, setData] = useState(null)
