@@ -41,10 +41,10 @@ const Login = ({ loginOrRegister }) => {
    
     if (loginOrRegister === "login") {
       loginHandler();
-      event.preventDefault()
+      // event.preventDefault()
     } else {
       registerHandler();
-      event.preventDefault()
+      // event.preventDefault()
     }
   }
   useEffect(
