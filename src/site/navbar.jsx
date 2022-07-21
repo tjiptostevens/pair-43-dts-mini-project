@@ -1,20 +1,19 @@
 import React, { useState } from 'react'
 import '../assets/css/navbar.css'
 import { NavLink, useNavigate } from 'react-router-dom'
-import logo from '../assets/img/logo.svg'
-import { Avatar } from '../assets/img/img'
+import { Avatar, Image } from '../assets/img/img'
 import { auth, logout } from '../config/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false)
   const [login, setLogin] = useState(true)
-  const navigate = useNavigate();
-  const buttonLogoutOnClickHandler = async() => {
-    await logout();
-    navigate('/login');
+  const navigate = useNavigate()
+  const buttonLogoutOnClickHandler = async () => {
+    await logout()
+    navigate('/login')
   }
-  const[user] = useAuthState(auth)
+  const [user] = useAuthState(auth)
   return (
     <>
       <div className="row navbar">
@@ -73,7 +72,7 @@ const Navbar = () => {
               <div>
                 <i className="ic ic-spectacles"></i>
               </div>
-              <div>{user.email}</div>
+              <div>{user ? user.email : '[USER ID]'}</div>
               <div>
                 <i className="ic ic-gift"></i>
               </div>
@@ -112,7 +111,7 @@ const Navbar = () => {
         id="nav-dropdown"
         className="nav-dropdown"
         style={{ opacity: dropdown ? '1' : '0' }}
-        onClick = {buttonLogoutOnClickHandler}
+        onClick={buttonLogoutOnClickHandler}
       >
         LOGOUT
       </div>

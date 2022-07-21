@@ -10,26 +10,20 @@ import Page404 from './site/page404'
 import { auth } from './config/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 
-
 function App() {
-  const [user, loading, error] = useAuthState(auth);
-  useEffect(
-    () => {
-      if(loading){
-        return ;
-      }
-      if(!user){
-        return <Login />
-      }
-      if(error)
-      {
-       alert (error)
-      }
-    }, [user, loading, error]
-  )
-  // if (false) {
-  //   return <Login />
-  // }
+  const [user, loading, error] = useAuthState(auth)
+  useEffect(() => {
+    if (loading) {
+      return
+    }
+    if (!user) {
+      return <Login />
+    }
+    if (error) {
+      alert(error)
+    }
+  }, [user, loading, error])
+
   return (
     <div className="App">
       <Navbar />

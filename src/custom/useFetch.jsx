@@ -9,9 +9,14 @@ const useFetch = (url) => {
   useEffect(() => {
     const abortCtr = new AbortController()
     setTimeout(() => {
-      fetch(`${API_URL}${url}?api_key=d4538f936ffc326e6145626accc8d24d`, {
-        signal: abortCtr.signal,
-      })
+      fetch(
+        `${API_URL}${url}?api_key=d4538f936ffc326e6145626accc8d24d&page=${Math.floor(
+          Math.random() * 10,
+        )}`,
+        {
+          signal: abortCtr.signal,
+        },
+      )
         .then((res) => {
           if (!res.ok) {
             throw Error('Could not fetch the data for that resource')
