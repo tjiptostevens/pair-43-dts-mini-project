@@ -7,8 +7,11 @@ import './assets/css/icon.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import Page404 from './site/page404'
-import Login from './site/login'
+// import Login from './site/login'
+import Register_app from './containers/Register_app'
+import Login_app from './containers/Login_app'
 import Whos from './site/whos'
+// import boot
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
@@ -16,8 +19,10 @@ root.render(
     <Router>
       <Routes>
         <Route path="/*" element={<App />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login_app />} />
+        <Route path="/register" element={<Register_app />} />
         <Route path="/whos" element={<Whos />} />
+        <Route path="/logout" />
         <Route element={<Page404 />} />
       </Routes>
     </Router>

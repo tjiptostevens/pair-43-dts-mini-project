@@ -1,9 +1,65 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useRef, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import '../assets/css/login.css'
 import { Avatar } from '../assets/img/img'
+import { auth, loginemailPassword, registerEmailPassword } from '../config/firebase'
+import { useAuthState } from 'react-firebase-hooks/auth'
 
-const Login = () => {
+const Login = ({ loginOrRegister }) => {
+  const navigate = useNavigate();
+  const [user, isLoading, error] = useAuthState(auth);
+
+
+  const [credential, setCredential] = useState({
+    email: "",
+    password: "",
+  });
+
+  const textFieldEmailOnChangeHandler = (event) => {
+    setCredential({
+      ...credential,
+      email: event.target.value,
+    });
+  };
+
+  const textFieldPasswordOnChangeHandler = (event) => {
+    setCredential({
+      ...credential,
+      password: event.target.value,
+    });
+  };
+
+  const loginHandler = () => {
+    loginemailPassword(credential.email, credential.password)
+  }
+  const registerHandler = () => {
+    registerEmailPassword(credential.email, credential.password);
+  }
+
+  const buttonLoginOrRegisterOnClickHandler = (event) => {
+   
+    if (loginOrRegister === "login") {
+      loginHandler();
+      event.preventDefault()
+    } else {
+      registerHandler();
+      event.preventDefault()
+    }
+  }
+  useEffect(
+    () => {
+      if(isLoading) {
+        return ;
+      }
+      if(user){
+        navigate('/home')
+      }
+      if(error){
+        console.log(error);
+      }
+    },
+    [isLoading, user, navigate]
+  )
   return (
     <>
       <div
@@ -23,14 +79,33 @@ const Login = () => {
           </Link>
         </div>
         <div className="col center login-right ">
-          <form className="col">
-            <input className="form-input" type="email" placeholder="EMAIL" />
-            <input
-              className="form-input"
-              type="password"
-              placeholder="PASSWORD"
-            />
-            <button className="btn btn-login">LOGIN</button>
+          <form className="col" >
+            <input className="form-input" type="email" value={credential.email} onChange={textFieldEmailOnChangeHandler} placeholder="EMAIL" />
+            <input type="password" placeholder='PASSWORD' className='form-input' onChange={textFieldPasswordOnChangeHandler} value={credential.password}/>
+            <button className="btn btn-login" onClick={buttonLoginOrRegisterOnClickHandler}>{loginOrRegister === "login" ? "LOGIN" : "SIGN UP"}</button>
+            {loginOrRegister === "login" ? (
+              <Link to="/register">
+              <span variant="body1">or do you want Register ?</span>
+            </Link>
+            ) : (
+              <Link to="/login">
+              <span variant="body1">or do you want Login ?</span>
+            </Link>
+            )}
+            {/* <button className="btn btn-login" onClick={buttonLoginOrRegisterOnClickHandler}>
+            {loginOrRegister === "login" ? "LOGIN" : "SIGN UP"}
+            </button>
+            <div className="col center" style={{ fontSize: '12px' }}>{loginOrRegister === "login" ? "Don't " : 'Already '}have an Account
+            {loginOrRegister === "login" ? (
+          <Link to="/register">
+            <span variant="body1">SIGN UP</span>
+          </Link>
+        ) : (
+          <Link to="/login">
+            <span variant="body1">LOGIN</span>
+          </Link>
+        )}
+            </div> */}
           </form>
         </div>
       </div>

@@ -1,10 +1,16 @@
 import React from 'react'
 import '../assets/css/navbar.css'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import logo from '../assets/img/logo.svg'
 import { Avatar } from '../assets/img/img'
+import { logout } from '../config/firebase'
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const buttonLogoutOnClickHandler = async() => {
+    await logout();
+    navigate('/login');
+  }
   return (
     <>
       <div className="row navbar">
@@ -19,6 +25,7 @@ const Navbar = () => {
           {/* Jika sudah login true */}
           {true ? (
             <div className="row nav-link">
+              <button onClick={buttonLogoutOnClickHandler}>Logout</button>
               <NavLink
                 className={({ isActive }) => (isActive ? 'a-active' : '')}
                 to="/"
