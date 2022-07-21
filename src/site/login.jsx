@@ -7,6 +7,7 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 
 const Login = ({ loginOrRegister }) => {
   const navigate = useNavigate();
+  const [toggle, setToggle] = useState(true)
   const [user, isLoading, error] = useAuthState(auth);
 
 
@@ -52,7 +53,7 @@ const Login = ({ loginOrRegister }) => {
         return ;
       }
       if(user){
-        navigate('/home')
+        navigate('/')
       }
       if(error){
         console.log(error);
@@ -63,14 +64,14 @@ const Login = ({ loginOrRegister }) => {
   return (
     <>
       <div
-        className="row center login-page"
+        className="login-page row center"
         style={{
           background: `linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%), url(${
             Avatar[Math.floor(Math.random() * Avatar.length)]
           }) no-repeat 0% 0% / contain`,
         }}
       >
-        <div className="row center login-left ">
+        <div className="login-left row center">
           <Link to="/">
             <i
               className="ic-chevron-left"
@@ -80,18 +81,15 @@ const Login = ({ loginOrRegister }) => {
         </div>
         <div className="col center login-right ">
           <form className="col" >
-            <input className="form-input" type="email" value={credential.email} onChange={textFieldEmailOnChangeHandler} placeholder="EMAIL" />
+          <input className="form-input" type="email" value={credential.email} onChange={textFieldEmailOnChangeHandler} placeholder="EMAIL" />
             <input type="password" placeholder='PASSWORD' className='form-input' onChange={textFieldPasswordOnChangeHandler} value={credential.password}/>
-            <button className="btn btn-login" onClick={buttonLoginOrRegisterOnClickHandler}>{loginOrRegister === "login" ? "LOGIN" : "SIGN UP"}</button>
-            {loginOrRegister === "login" ? (
-              <Link to="/register">
-              <span variant="body1">or do you want Register ?</span>
-            </Link>
-            ) : (
-              <Link to="/login">
-              <span variant="body1">or do you want Login ?</span>
-            </Link>
-            )}
+            <button className="btn btn-login" onClick={buttonLoginOrRegisterOnClickHandler}>{toggle ? "LOGIN" : "SIGN UP"}</button>
+            <div className="col center" style={{ fontSize: '12px' }}>
+              {toggle ? "Don't " : 'Already '}have an Account
+              <div className="btn-signup" onClick={() => setToggle(!toggle)}>
+                {toggle ? 'SIGN UP' : 'LOGIN'}
+              </div>
+            </div>
             {/* <button className="btn btn-login" onClick={buttonLoginOrRegisterOnClickHandler}>
             {loginOrRegister === "login" ? "LOGIN" : "SIGN UP"}
             </button>

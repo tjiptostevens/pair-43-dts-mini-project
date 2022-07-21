@@ -4,6 +4,8 @@ import './App.css'
 import Navbar from './site/navbar'
 import Footer from './site/footer'
 import Home from './site/home'
+import Login from './site/login'
+import Page404 from './site/page404'
 
 import { auth } from './config/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
@@ -18,7 +20,7 @@ function App() {
         return ;
       }
       if(!user){
-        navigate('/login');
+        return <Login />
       }
       if(error)
       {
@@ -26,11 +28,15 @@ function App() {
       }
     }, [user, loading, navigate]
   )
+  // if (false) {
+  //   return <Login />
+  // }
   return (
     <div className="App">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="*" element={<Page404 />} />
       </Routes>
       <Footer />
     </div>

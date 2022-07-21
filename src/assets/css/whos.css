@@ -1,24 +1,74 @@
-.whos-page {
-    width: 100%;
-    height: 100vh;
+@media only screen and (max-width: 1920px) {
+    .whos-page {
+        width: 100%;
+        height: 100vh;
+    }
+    .profile {
+        width: 150px;
+        height: 150px;
+        margin: 15px;
+    }
+    .btn-profile {
+        background-color: black;
+        color: grey;
+        border: 1px solid grey;
+        min-width: 200px;
+        margin: 25px 0;
+        cursor: pointer;
+        transition: all 500ms;
+    }
+    .btn-profile:hover {
+        background-color: grey;
+        color: black;
+        transition: all 500ms;
+    }
+    .whos-logo {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+    }
+    .profile-container {
+        background-color: black;
+        cursor: pointer;
+        transition: all 500ms;
+    }
+    .profile-container:hover {
+        background-color: rgb(48, 48, 48);
+        transition: all 500ms;
+    }
+    .btn-x {
+        position: relative;
+        right: -150px;
+        top: 25px;
+        background: red;
+        color: white;
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 500ms;
+        animation: wiggle 1s infinite;
+    }
+    .btn-x:hover {
+        transition: all 500ms;
+        animation: none;
+    }
 }
 
-.profile {
-    width: 150px;
-    height: 150px;
-    margin: 15px;
-}
-
-.btn-profile {
-    background-color: black;
-    color: grey;
-    border: 1px solid grey;
-    min-width: 200px;
-    margin: 25px 0;
-}
-
-.whos-logo {
-    position: absolute;
-    top: 50px;
-    left: 50px;
+@keyframes wiggle {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    80% {
+        transform: translate(-1px, -2px) rotate(0deg);
+    }
+    85% {
+        transform: translate(3px, 2px) rotate(5deg);
+    }
+    95% {
+        transform: translate(-3px, 1px) rotate(-5deg);
+    }
+    100% {
+        transform: translate(1px, -2px) rotate(0deg);
+    }
 }
