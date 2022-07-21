@@ -33,19 +33,21 @@ const Login = ({ loginOrRegister }) => {
     })
   }
 
-  const loginHandler = () => {
-    loginemailPassword(credential.email, credential.password)
+  const loginHandler = async () => {
+    await loginemailPassword(credential.email, credential.password)
   }
-  const registerHandler = () => {
-    registerEmailPassword(credential.email, credential.password)
+  const registerHandler = async () => {
+    await registerEmailPassword(credential.email, credential.password)
   }
 
-  const buttonLoginOrRegisterOnClickHandler = (event) => {
+  const buttonLoginOrRegisterOnClickHandler = async (event) => {
     if (loginOrRegister === 'login') {
-      loginHandler()
+      await loginHandler()
+      navigate('/whos')
       // event.preventDefault()
     } else {
-      registerHandler()
+      await registerHandler()
+      navigate('/login')
       // event.preventDefault()
     }
   }

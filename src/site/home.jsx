@@ -8,10 +8,9 @@ const Home = () => {
   const [popularsMovies, setPopularsMovies] = useState([])
   const [indonesia, setIndonesia] = useState([])
   const [banner, setBanner] = useState([])
-
-  const { data } = useFetch('movie/upcoming')
+  const { data } = useFetch('movie/popular')
   const { data: trending } = useFetch('trending/all/week')
-  //const { data: topRated } = useFetch('movie/top_rated')
+  //const { data: upcoming } = useFetch('movie/upcoming')
   const { data: popular } = useFetch('movie/popular')
 
   const getBannerApp = async () => {
@@ -58,7 +57,7 @@ const Home = () => {
     <>
       {/* <Carousel data={banner} /> */}
       {data && <Carousel data={data.results.slice(15)} />}
-      <MiniSlider title={'Popular'} data={popularsMovies} />
+      <MiniSlider title={'Watch Again'} data={popularsMovies} />
       {popular && <MiniSlider title={'Popular'} data={popular.results} />}
       <MiniSlider
         title={'Top 10 Indonesian Movies'}
@@ -70,15 +69,14 @@ const Home = () => {
         <MiniSlider title={'Trending'} height={400} data={trending.results} />
       )}
       <MiniSlider title={'On The Agenda'} data={banner} />
-      {/*{topRated && (
+      {/*{upcoming && (
         <MiniSlider
           title={'Top 10 Indonesian Movies'}
-          data={topRated.results.slice(10)}
+          data={upcoming.results.slice(10)}
           top10={true}
         />
       )} */}
-      {/* <MiniSlider title={'Watch Again'} data={popular} />
-      <MiniSlider title={'My List'} data={popular} /> */}
+      {/* <MiniSlider title={'My List'} data={popular} /> */}
     </>
   )
 }
