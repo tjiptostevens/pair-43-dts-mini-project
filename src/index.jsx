@@ -7,11 +7,11 @@ import './assets/css/icon.css'
 import './assets/css/mobile.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import Page404 from './site/page404'
+// import Page404 from './site/page404'
 // import Login from './site/login'
 import Register_app from './containers/Register_app'
 import Login_app from './containers/Login_app'
-import Login from './site/login'
+// import Login from './site/login'
 import Whos from './site/whos'
 // import boot
 
