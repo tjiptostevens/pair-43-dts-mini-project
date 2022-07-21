@@ -26,7 +26,7 @@ function App() {
       {
        alert (error)
       }
-    }, [user, loading, navigate]
+    }, [user, loading, error]
   )
   // if (false) {
   //   return <Login />
