@@ -24,7 +24,7 @@ function App() {
       }
       if(error)
       {
-        console.log(error)
+       alert (error)
       }
     }, [user, loading, navigate]
   )
