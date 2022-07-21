@@ -7,8 +7,13 @@ import './assets/css/icon.css'
 import './assets/css/mobile.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import Login from './site/login'
+// import Page404 from './site/page404'
+// import Login from './site/login'
+import RegisterApp from './containers/RegisterApp'
+import LoginApp from './containers/LoginApp'
+// import Login from './site/login'
 import Whos from './site/whos'
+// import boot
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
@@ -16,7 +21,8 @@ root.render(
     <Router>
       <Routes>
         <Route exact path="/*" element={<App />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<LoginApp />} />
+        <Route path="/register" element={<RegisterApp />} />
         <Route path="/whos" element={<Whos />} />
       </Routes>
     </Router>

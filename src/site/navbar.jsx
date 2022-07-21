@@ -1,11 +1,20 @@
 import React, { useState } from 'react'
 import '../assets/css/navbar.css'
-import { NavLink } from 'react-router-dom'
-import { Avatar, Image } from '../assets/img/img'
+import { NavLink, useNavigate } from 'react-router-dom'
+import logo from '../assets/img/logo.svg'
+import { Avatar } from '../assets/img/img'
+import { auth, logout } from '../config/firebase'
+import { useAuthState } from 'react-firebase-hooks/auth'
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false)
-  const [login, setLogin] = useState(false)
+  const [login, setLogin] = useState(true)
+  const navigate = useNavigate();
+  const buttonLogoutOnClickHandler = async() => {
+    await logout();
+    navigate('/login');
+  }
+  const[user] = useAuthState(auth)
   return (
     <>
       <div className="row navbar">
@@ -64,7 +73,7 @@ const Navbar = () => {
               <div>
                 <i className="ic ic-spectacles"></i>
               </div>
-              <div>[USER ID]</div>
+              <div>{user.email}</div>
               <div>
                 <i className="ic ic-gift"></i>
               </div>
@@ -94,7 +103,7 @@ const Navbar = () => {
             </div>
           </>
         ) : (
-          <div className="row nav-link" onClick={() => setLogin(!login)}>
+          <div className="row nav-link" onClick={() => setLogin(login)}>
             <NavLink to="/login">Login</NavLink>
           </div>
         )}
@@ -103,6 +112,7 @@ const Navbar = () => {
         id="nav-dropdown"
         className="nav-dropdown"
         style={{ opacity: dropdown ? '1' : '0' }}
+        onClick = {buttonLogoutOnClickHandler}
       >
         LOGOUT
       </div>

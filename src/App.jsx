@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import Navbar from './site/navbar'
@@ -7,11 +7,29 @@ import Home from './site/home'
 import Login from './site/login'
 import Page404 from './site/page404'
 
+import { auth } from './config/firebase'
+import { useAuthState } from 'react-firebase-hooks/auth'
+
+
 function App() {
-  // cek apakah sudah login ?
-  if (false) {
-    return <Login />
-  }
+  const [user, loading, error] = useAuthState(auth);
+  useEffect(
+    () => {
+      if(loading){
+        return ;
+      }
+      if(!user){
+        return <Login />
+      }
+      if(error)
+      {
+       alert (error)
+      }
+    }, [user, loading, error]
+  )
+  // if (false) {
+  //   return <Login />
+  // }
   return (
     <div className="App">
       <Navbar />
