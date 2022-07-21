@@ -9,8 +9,8 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 // import Page404 from './site/page404'
 // import Login from './site/login'
-import Register_app from './containers/Register_app'
-import Login_app from './containers/Login_app'
+import RegisterApp from './containers/Register_app'
+import LoginApp from './containers/Login_app'
 // import Login from './site/login'
 import Whos from './site/whos'
 // import boot
@@ -21,8 +21,8 @@ root.render(
     <Router>
       <Routes>
         <Route exact path="/*" element={<App />} />
-        <Route path="/login" element={<Login_app />} />
-        <Route path="/register" element={<Register_app />} />
+        <Route path="/login" element={<LoginApp />} />
+        <Route path="/register" element={<RegisterApp />} />
         <Route path="/whos" element={<Whos />} />
       </Routes>
     </Router>
