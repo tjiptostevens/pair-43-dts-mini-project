@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import MiniSlider from '../components/miniSlider/miniSlider'
 import Carousel from './carousel'
+
 // import testImage from '../assets/img/test.jpg'
 import { POPULAR_BASE_URL, POPULAR_BASE_URL_INA } from '../config/config'
 
@@ -8,6 +9,15 @@ const Home = () => {
   const [populars_movie, setPopulars_movies] = useState([]);
   const [indonesia_popular, setIndonesia] = useState([]);
   const [banner, setBanner] = useState([]);
+
+//import useFetch from '../custom/useFetch'
+
+//const Home = () => {
+  //const { data } = useFetch('movie/upcoming')
+  //const { data: popular } = useFetch('movie/popular')
+  //const { data: trending } = useFetch('trending/all/week')
+  //const { data: topRated } = useFetch('movie/top_rated')
+
 
   const getBannerApp = async () => {
     const trending_url= POPULAR_BASE_URL;
@@ -216,6 +226,22 @@ const Home = () => {
         data={indonesia_popular}
         top10={true}
       />
+
+      {/* {console.log(popular)} */}
+      {/* {data && <Carousel data={data.results.slice(15)} />} */}
+      {/*{popular && <MiniSlider title={'Popular'} data={popular.results} />} */}
+      {/* <MiniSlider title={`[USER ID], Continue Watching`} data={popular} /> */}
+      {/* <MiniSlider title={'On The Agenda'} data={popular} /> */}
+      {/*{trending && (
+        <MiniSlider title={'Trending'} height={400} data={trending.results} />
+      )} */}
+      {/*{topRated && (
+        <MiniSlider
+          title={'Top 10 Indonesian Movies'}
+          data={topRated.results.slice(10)}
+          top10={true}
+        />
+      )} */}
       {/* <MiniSlider title={'Watch Again'} data={popular} />
       <MiniSlider title={'My List'} data={popular} /> */}
     </>

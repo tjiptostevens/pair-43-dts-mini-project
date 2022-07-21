@@ -14,6 +14,7 @@ const StripContent = (props) => {
         }}
       >
         <Strip
+          title={props.title}
           data={props.data}
           height={props.height}
           slide={props.slide}

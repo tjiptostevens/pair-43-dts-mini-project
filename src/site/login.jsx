@@ -84,6 +84,7 @@ const Login = ({ loginOrRegister }) => {
           <input className="form-input" type="email" value={credential.email} onChange={textFieldEmailOnChangeHandler} placeholder="EMAIL" />
             <input type="password" placeholder='PASSWORD' className='form-input' onChange={textFieldPasswordOnChangeHandler} value={credential.password}/>
             <button className="btn btn-login" onClick={buttonLoginOrRegisterOnClickHandler}>{toggle ? "LOGIN" : "SIGN UP"}</button>
+
             <div className="col center" style={{ fontSize: '12px' }}>
               {toggle ? "Don't " : 'Already '}have an Account
               <div className="btn-signup" onClick={() => setToggle(!toggle)}>
