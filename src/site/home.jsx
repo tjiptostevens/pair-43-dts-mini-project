@@ -1,6 +1,7 @@
 import React from 'react'
 import MiniSlider from '../components/miniSlider/miniSlider'
 import Carousel from './carousel'
+import testImage from '../assets/img/test.jpg'
 
 const Home = () => {
   const data = [
@@ -11,7 +12,7 @@ const Home = () => {
       tag: 'Movie, Popular, Trailer',
       image:
         'https://images.unsplash.com/photo-1449034446853-66c86144b0ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80',
-      video: 'https://www.youtube.com/embed/oXWYauB7_AU',
+      video: 'oXWYauB7_AU',
     },
     {
       title: 'Black Adam',
@@ -20,7 +21,7 @@ const Home = () => {
       tag: 'Movie, Popular, Trailer',
       image:
         'https://images.unsplash.com/photo-1470341223622-1019832be824?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2288&q=80',
-      video: 'https://www.youtube.com/embed/X0tOpBuYasI',
+      video: 'X0tOpBuYasI',
     },
     {
       title: 'Star Wars',
@@ -29,7 +30,7 @@ const Home = () => {
       tag: 'Movie, Popular, Trailer',
       image:
         'https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2094&q=80',
-      video: 'https://www.youtube.com/embed/8Qn_spdM5Zg',
+      video: '8Qn_spdM5Zg',
     },
     {
       title: 'Naruto the Movies',
@@ -38,81 +39,66 @@ const Home = () => {
       tag: 'Movie, Popular, Trailer',
       image:
         'https://images.unsplash.com/photo-1534161308652-fdfcf10f62c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2174&q=80',
-      video: 'https://www.youtube.com/embed/USn19iuBJv0',
+      video: 'USn19iuBJv0',
     },
   ]
   const popular = [
     {
       title: '',
-      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
-        Math.floor(Math.random() * 100) + 300
-      }`,
+      image: testImage,
     },
     {
       title: '',
-      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
-        Math.floor(Math.random() * 100) + 300
-      }`,
+      image: testImage,
     },
     {
       title: '',
-      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
-        Math.floor(Math.random() * 100) + 300
-      }`,
+      image: testImage,
     },
     {
       title: '',
-      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
-        Math.floor(Math.random() * 100) + 300
-      }`,
+      image: testImage,
     },
     {
       title: '',
-      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
-        Math.floor(Math.random() * 100) + 300
-      }`,
+      image: testImage,
     },
     {
       title: '',
-      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
-        Math.floor(Math.random() * 100) + 300
-      }`,
+      image: testImage,
     },
     {
       title: '',
-      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
-        Math.floor(Math.random() * 100) + 300
-      }`,
+      image: testImage,
     },
     {
       title: '',
-      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
-        Math.floor(Math.random() * 100) + 300
-      }`,
+      image: testImage,
     },
     {
       title: '',
-      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
-        Math.floor(Math.random() * 100) + 300
-      }`,
+      image: testImage,
     },
     {
       title: '',
-      image: `https://picsum.photos/${Math.floor(Math.random() * 100) + 200}/${
-        Math.floor(Math.random() * 100) + 300
-      }`,
+      image: testImage,
     },
   ]
+
   return (
     <>
       <Carousel data={data} />
       <MiniSlider title={'Popular'} data={popular} />
-      <MiniSlider title={`[USER ID], Continue Watching`} data={popular} />
+      {/* <MiniSlider title={`[USER ID], Continue Watching`} data={popular} />
       <MiniSlider title={'On The Agenda'} data={popular} />
-      <MiniSlider title={'Original'} height={'400px'} data={popular} />
-      <MiniSlider title={'Top 10 Indonesian Movies'} data={popular} />
-      <MiniSlider title={'Watch Again'} data={popular} />
-      <MiniSlider title={'My List'} data={popular} />
+      <MiniSlider title={'Original'} height={400} data={popular} /> */}
+      <MiniSlider
+        title={'Top 10 Indonesian Movies'}
+        data={popular}
+        top10={true}
+      />
+      {/* <MiniSlider title={'Watch Again'} data={popular} />
+      <MiniSlider title={'My List'} data={popular} /> */}
     </>
   )
 }

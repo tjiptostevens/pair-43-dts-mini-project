@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
+import useWindow from '../../custom/useWindow'
 import Arrow from '../slider/arrow'
 import StripContent from './stripContent'
 
 const MiniSlider = (props) => {
+  const { width: getWidth } = useWindow()
   const [state, setState] = useState({
     activeIndex: 0,
     translate: 0,
     transition: 0.5,
-    width: 300,
+    slide: { width: 150, height: 200 },
   })
   // Arrow Button
   const nextSlide = () => {
@@ -17,14 +19,14 @@ const MiniSlider = (props) => {
     setState({
       ...state,
       activeIndex: state.activeIndex + 1,
-      translate: ((state.activeIndex + 1) * state.width) / 2,
+      translate: state.activeIndex * state.slide.width,
     })
   }
   const prevSlide = () => {
     if (state.activeIndex === props.data.length - 1) {
       return setState({
         ...state,
-        translate: ((props.data.length - 1) * state.width) / 2,
+        translate: (props.data.length - 1) * state.slide.width,
         activeIndex: props.data.length - 1,
       })
     }
@@ -35,7 +37,7 @@ const MiniSlider = (props) => {
       translate:
         state.activeIndex === 0
           ? state.activeIndex
-          : ((state.activeIndex - 1) * state.width) / 2,
+          : (state.activeIndex - 1) * state.slide.width,
     })
   }
   return (
@@ -51,16 +53,35 @@ const MiniSlider = (props) => {
         <StripContent
           translate={state.translate}
           transition={state.transition}
-          width={state.width * props.data.length}
+          width={
+            props.top10
+              ? (state.slide.width + state.slide.height / 2) * props.data.length
+              : state.slide.width * props.data.length
+          }
           data={props.data}
           height={props.height}
+          slide={state.slide}
+          top10={props.top10}
         />
         {state.activeIndex === 0 ? (
           ''
         ) : (
           <Arrow direction="left" handleClick={prevSlide} />
         )}
-        <Arrow direction="right" handleClick={nextSlide} />
+        {props.top10 ? (
+          getWidth - (state.slide.width + state.slide.height / 2) <
+          (state.slide.width + state.slide.height / 2) * props.data.length -
+            state.translate ? (
+            <Arrow direction="right" handleClick={nextSlide} />
+          ) : (
+            ''
+          )
+        ) : getWidth - state.slide.width <
+          state.slide.width * props.data.length - state.translate ? (
+          <Arrow direction="right" handleClick={nextSlide} />
+        ) : (
+          ''
+        )}
       </div>
     </>
   )

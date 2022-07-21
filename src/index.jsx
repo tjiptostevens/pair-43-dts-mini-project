@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './assets/css/scrollbar.css'
 import './index.css'
 import './assets/css/icon.css'
+import './assets/css/mobile.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import Page404 from './site/page404'
 import Login from './site/login'
 import Whos from './site/whos'
 
@@ -15,10 +15,9 @@ root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/*" element={<App />} />
+        <Route exact path="/*" element={<App />} />
         <Route path="/login" element={<Login />} />
         <Route path="/whos" element={<Whos />} />
-        <Route element={<Page404 />} />
       </Routes>
     </Router>
   </React.StrictMode>,
