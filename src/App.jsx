@@ -4,11 +4,11 @@ import './App.css'
 import Navbar from './site/navbar'
 import Footer from './site/footer'
 import Home from './site/home'
-import Login from './site/login'
 import Page404 from './site/page404'
 
 import { auth } from './config/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
+import LoginApp from './containers/LoginApp'
 
 function App() {
   const [user, loading, error] = useAuthState(auth)
@@ -17,7 +17,7 @@ function App() {
       return
     }
     if (!user) {
-      return <Login />
+      return <LoginApp />
     }
     if (error) {
       alert(error)

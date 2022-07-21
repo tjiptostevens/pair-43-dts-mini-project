@@ -102,7 +102,6 @@ const Login = ({ loginOrRegister }) => {
             >
               {loginOrRegister === 'login' ? 'LOGIN' : 'SIGN UP'}
             </button>
-            {console.log(loginOrRegister)}
             <div className="col center" style={{ fontSize: '12px' }}>
               {loginOrRegister === 'login' ? "Don't " : 'Already '}have an
               Account

@@ -16,6 +16,7 @@ const Navbar = () => {
   const [user] = useAuthState(auth)
   return (
     <>
+      {console.log(user)}
       <div className="row navbar">
         <div className="row">
           <div
