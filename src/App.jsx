@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Routes, Route, useNavigate } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import Navbar from './site/navbar'
 import Footer from './site/footer'
@@ -12,7 +12,6 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 
 
 function App() {
-  const navigate = useNavigate();
   const [user, loading, error] = useAuthState(auth);
   useEffect(
     () => {
