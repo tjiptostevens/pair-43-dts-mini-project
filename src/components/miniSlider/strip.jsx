@@ -4,6 +4,7 @@ import { iconNumber } from '../../assets/img/img.jsx'
 const Strip = (props) => {
   return (
     <>
+      <div></div>
       {props.data.map((d, i) => (
         <div className="row" key={d.id + 'strip' + Math.random() + props.title}>
           {props.top10 ? (
