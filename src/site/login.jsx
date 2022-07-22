@@ -55,16 +55,20 @@ const Login = ({ loginOrRegister }) => {
   }
   const loginHandler = async () => {
     let res = await loginemailPassword(credential.email, credential.password)
-    navigate('whos')
+
     if (res !== undefined) {
       alert(res)
+    } else {
+      navigate('/whos')
     }
   }
   const registerHandler = async () => {
     let res = await registerEmailPassword(credential.email, credential.password)
-    navigate('/login')
+
     if (res !== undefined) {
       alert(res)
+    } else {
+      navigate('/login')
     }
   }
 
