@@ -2,18 +2,21 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../assets/css/whos.css'
 import WhosProfile from './whosProfile'
-import { Image } from '../assets/img/img'
+import { Avatar, Image } from '../assets/img/img'
+import { auth } from '../config/firebase'
+import { useAuthState } from 'react-firebase-hooks/auth'
 
 let profiles = [
-  { icon: '0', name: 'ALDI' },
-  { icon: '1', name: 'Steven' },
-  { icon: '2', name: 'Freddy' },
+  { icon: '1', name: 'IK SURYA' },
+  { icon: '2', name: 'TJIPT' },
   { icon: '3', name: 'Angel' },
 ]
 
 const Whos = () => {
+  const [avatarIndex] = useState(Math.floor(Math.random() * Avatar.length))
   const [profile, setProfile] = useState(profiles)
   const [toggle, setToggle] = useState(false)
+  const [user] = useAuthState(auth)
   const handleDelete = (e) => {
     let x = [...profile]
     x.splice(e, 1)
@@ -55,11 +58,25 @@ const Whos = () => {
       <div className="col center whos-page">
         <h1>Who's watching?</h1>
         <div className="row center" style={{ flexWrap: 'wrap' }}>
+          {user && (
+            <Link to="/" style={{ color: 'white' }}>
+              <div className="col center profile-container">
+                <div
+                  className="profile"
+                  style={{
+                    background: `url(${Avatar[avatarIndex]}) no-repeat center center`,
+                  }}
+                ></div>
+                <p>{user.email.split('@')[0].toUpperCase()}</p>
+              </div>
+            </Link>
+          )}
           <WhosProfile
             data={profile}
             handleDelete={handleDelete}
             toggle={toggle}
           />
+
           {toggle ? (
             <div className="col center profile-container" onClick={handleAdd}>
               <div
