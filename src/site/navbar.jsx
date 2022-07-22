@@ -6,6 +6,7 @@ import { auth, logout } from '../config/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 
 const Navbar = () => {
+  const [avatarIndex] = useState(Math.floor(Math.random() * Avatar.length))
   const [dropdown, setDropdown] = useState(false)
   const [login, setLogin] = useState(true)
   const navigate = useNavigate()
@@ -91,9 +92,7 @@ const Navbar = () => {
                 <div
                   className="nav-profile"
                   style={{
-                    background: `url(${
-                      Avatar[Math.floor(Math.random() * Avatar.length)]
-                    }) no-repeat center center / cover`,
+                    background: `url(${Avatar[avatarIndex]}) no-repeat center center / cover`,
                   }}
                 ></div>
                 <div>

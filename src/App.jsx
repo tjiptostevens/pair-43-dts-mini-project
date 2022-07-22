@@ -16,7 +16,7 @@ function App() {
     if (loading) {
       return
     }
-    if (!user) {
+    if (!user || user === null) {
       return <LoginApp />
     }
     if (error) {
