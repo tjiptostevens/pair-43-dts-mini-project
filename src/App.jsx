@@ -13,19 +13,23 @@ import LoginApp from './containers/LoginApp'
 function App() {
   const [user, loading, error] = useAuthState(auth)
   useEffect(() => {
-    if (loading) {
-      return
-    }
-    if (!user || user === null) {
-      return <LoginApp />
-    }
-    if (error) {
-      alert(error)
+    try {
+      if (loading) {
+        return
+      }
+      if (!user || user === null) {
+        return <LoginApp />
+      }
+    } catch (error) {
+      if (error) {
+        alert(error)
+      }
     }
   }, [user, loading, error])
 
   return (
     <div className="App">
+      {/* {console.log(user)} */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -4,6 +4,7 @@ import '../assets/css/login.css'
 import { Avatar } from '../assets/img/img'
 import {
   auth,
+  forgotPassword,
   loginemailPassword,
   registerEmailPassword,
 } from '../config/firebase'
@@ -32,23 +33,33 @@ const Login = ({ loginOrRegister }) => {
       password: event.target.value,
     })
   }
-
+  const forgotHandler = async () => {
+    let res = await forgotPassword(credential.email)
+    if (res !== undefined) {
+      alert('Password has been reset. Please check your email.')
+    }
+  }
   const loginHandler = async () => {
-    await loginemailPassword(credential.email, credential.password)
+    let res = await loginemailPassword(credential.email, credential.password)
+    navigate('whos')
+    if (res !== undefined) {
+      alert(res)
+    }
   }
   const registerHandler = async () => {
-    await registerEmailPassword(credential.email, credential.password)
+    let res = await registerEmailPassword(credential.email, credential.password)
+    navigate('/login')
+    if (res !== undefined) {
+      alert(res)
+    }
   }
 
   const buttonLoginOrRegisterOnClickHandler = async (event) => {
+    event.preventDefault()
     if (loginOrRegister === 'login') {
       await loginHandler()
-      navigate('/whos')
-      // event.preventDefault()
     } else {
       await registerHandler()
-      navigate('/login')
-      // event.preventDefault()
     }
   }
   useEffect(() => {
@@ -56,7 +67,7 @@ const Login = ({ loginOrRegister }) => {
       return
     }
     if (user) {
-      navigate('/')
+      navigate('/whos')
     }
     if (error) {
       console.log(error)
@@ -64,6 +75,7 @@ const Login = ({ loginOrRegister }) => {
   }, [isLoading, user, navigate, error])
   return (
     <>
+      {console.log(user)}
       <div
         className="login-page row center"
         style={{
@@ -96,6 +108,16 @@ const Login = ({ loginOrRegister }) => {
               placeholder="PASSWORD"
               style={{ color: 'grey' }}
             />
+            <div
+              onClick={forgotHandler}
+              style={{
+                fontSize: '10px',
+                cursor: 'pointer',
+                textAlign: 'right',
+              }}
+            >
+              forgot password
+            </div>
             <button
               className="btn btn-login"
               onClick={buttonLoginOrRegisterOnClickHandler}

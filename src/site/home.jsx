@@ -3,8 +3,11 @@ import MiniSlider from '../components/miniSlider/miniSlider'
 import Carousel from './carousel'
 import useFetch from '../custom/useFetch'
 import { POPULAR_BASE_URL, POPULAR_BASE_URL_INA } from '../config/config'
+import { auth } from '../config/firebase'
+import { useAuthState } from 'react-firebase-hooks/auth'
 
 const Home = () => {
+  const [user] = useAuthState(auth)
   const [popularsMovies, setPopularsMovies] = useState([])
   const [indonesia, setIndonesia] = useState([])
   const [banner, setBanner] = useState([])
@@ -58,16 +61,25 @@ const Home = () => {
       {/* <Carousel data={banner} /> */}
       {data && <Carousel data={data.results.slice(15)} />}
       <MiniSlider title={'Watch Again'} data={popularsMovies} />
-      {popular && <MiniSlider title={'Popular'} data={popular.results} />}
+      {user && popular && (
+        <MiniSlider
+          title={`${
+            user ? user.email.split('@')[0].toUpperCase() : '[USER ID]'
+          }, Continue Watching`}
+          data={popular.results}
+        />
+      )}
+
       <MiniSlider
         title={'Top 10 Indonesian Movies'}
         data={indonesia}
         top10={true}
       />
-      {/* <MiniSlider title={`[USER ID], Continue Watching`} data={popular} /> */}
+
       {trending && (
         <MiniSlider title={'Trending'} height={400} data={trending.results} />
       )}
+      {popular && <MiniSlider title={'Popular'} data={popular.results} />}
       <MiniSlider title={'On The Agenda'} data={banner} />
       {/*{upcoming && (
         <MiniSlider

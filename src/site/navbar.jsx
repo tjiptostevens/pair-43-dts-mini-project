@@ -17,7 +17,7 @@ const Navbar = () => {
   const [user] = useAuthState(auth)
   return (
     <>
-      {console.log(user)}
+      {/* {console.log(user)} */}
       <div className="row navbar">
         <div className="row">
           <div
@@ -27,7 +27,7 @@ const Navbar = () => {
             }}
           ></div>
           {/* Jika sudah login true */}
-          {login ? (
+          {user ? (
             <div className="row nav-link">
               <NavLink
                 className={({ isActive }) => (isActive ? 'a-active' : '')}
@@ -68,13 +68,15 @@ const Navbar = () => {
             ''
           )}
         </div>
-        {login ? (
+        {user ? (
           <>
             <div className="row center nav-menu">
               <div>
                 <i className="ic ic-spectacles"></i>
               </div>
-              <div>{user ? user.email : '[USER ID]'}</div>
+              <div>
+                {user ? user.email.split('@')[0].toUpperCase() : '[USER ID]'}
+              </div>
               <div>
                 <i className="ic ic-gift"></i>
               </div>
