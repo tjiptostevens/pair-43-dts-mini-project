@@ -13,18 +13,20 @@ import LoginApp from './containers/LoginApp'
 function App() {
   const [user, loading, error] = useAuthState(auth)
   useEffect(() => {
-    try {
-      if (loading) {
-        return
+    setTimeout(() => {
+      try {
+        if (loading) {
+          return
+        }
+        if (!user || user === null) {
+          return <LoginApp />
+        }
+      } catch (error) {
+        if (error) {
+          alert(error)
+        }
       }
-      if (!user || user === null) {
-        return <LoginApp />
-      }
-    } catch (error) {
-      if (error) {
-        alert(error)
-      }
-    }
+    }, 500)
   }, [user, loading, error])
 
   return (

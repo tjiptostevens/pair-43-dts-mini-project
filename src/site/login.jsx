@@ -34,9 +34,23 @@ const Login = ({ loginOrRegister }) => {
     })
   }
   const forgotHandler = async () => {
-    let res = await forgotPassword(credential.email)
-    if (res !== undefined) {
-      alert('Password has been reset. Please check your email.')
+    let y
+    if (!credential.email) {
+      let x = prompt('Please input your email here.')
+
+      if (x !== null) {
+        let res = await forgotPassword(x)
+        y = res
+        if (res !== undefined) {
+          alert(y)
+        }
+      }
+    } else {
+      let res = await forgotPassword(credential.email)
+      y = res
+      if (res !== undefined) {
+        alert(y)
+      }
     }
   }
   const loginHandler = async () => {
@@ -63,15 +77,17 @@ const Login = ({ loginOrRegister }) => {
     }
   }
   useEffect(() => {
-    if (isLoading) {
-      return
-    }
-    if (user) {
-      navigate('/whos')
-    }
-    if (error) {
-      console.log(error)
-    }
+    setTimeout(() => {
+      if (isLoading) {
+        return
+      }
+      if (user) {
+        navigate('/whos')
+      }
+      if (error) {
+        console.log(error)
+      }
+    }, 500)
   }, [isLoading, user, navigate, error])
   return (
     <>
